@@ -20,7 +20,7 @@ import org.springframework.stereotype.Service;
  * @author ajc
  */
 @Service
-public class UtilisateurServiceImpl implements UtilisateurService{
+public class UtilisateurServiceImpl implements UtilisateurServiceInterface{
 
     @Autowired
     private UtilisateurDAOImpl dao;

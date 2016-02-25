@@ -16,7 +16,7 @@ import org.springframework.stereotype.Service;
  * @author ajc
  */
 @Service
-public class ForumServiceImpl implements ForumService{
+public class ForumServiceImpl implements ForumServiceInterface{
     
     @Autowired
     private ForumDAOImpl dao;

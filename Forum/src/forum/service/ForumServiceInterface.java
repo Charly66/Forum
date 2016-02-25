@@ -12,7 +12,7 @@ import java.util.List;
  *
  * @author ajc
  */
-public interface ForumService {
+public interface ForumServiceInterface {
     public void ajouter(Forum f);
     public void supprimer(Forum f);
     public void supprimerTout();

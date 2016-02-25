@@ -17,7 +17,7 @@ import org.springframework.stereotype.Service;
 public class DataService {
 
     @Autowired
-    UtilisateurService utilisateur;
+    UtilisateurServiceInterface utilisateur;
     ForumServiceImpl forum;
     MessageServiceImpl message;
     SujetServiceImpl sujet;

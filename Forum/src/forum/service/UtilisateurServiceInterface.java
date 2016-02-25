@@ -15,7 +15,7 @@ import java.util.List;
  *
  * @author ajc
  */
-public interface UtilisateurService {
+public interface UtilisateurServiceInterface {
     public void inscription(Utilisateur u) throws DejaInscritException;
     public void validationInscription(String mail);
     public void login(String login, String password) throws PasswordException, LoginInconnuException;
