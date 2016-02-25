@@ -5,22 +5,29 @@
  */
 package forum.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 /**
  *
  * @author admin
  */
+
+@Service
 public class DataService {
-    
-    public void deleteAll(){
-       UtilisateurService utilisateur = new UtilisateurService();
-       ForumServiceImpl forum = new ForumServiceImpl();
-       MessageService message = new MessageService();
-       SujetService sujet = new SujetService();
-       
-       utilisateur.supprimerTout();
-       forum.supprimerTout();
-       message.supprimerTout();
-       sujet.supprimerTout();
+
+    @Autowired
+    UtilisateurService utilisateur;
+    ForumServiceImpl forum;
+    MessageServiceImpl message;
+    SujetServiceImpl sujet;
+
+    public void deleteAll() {
+
+        utilisateur.supprimerTout();
+        forum.supprimerTout();
+        message.supprimerTout();
+        sujet.supprimerTout();
     }
-    
+
 }
