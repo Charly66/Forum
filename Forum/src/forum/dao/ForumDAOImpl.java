@@ -6,7 +6,6 @@
 package forum.dao;
 
 import forum.entity.Forum;
-import java.util.Collection;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.Persistence;

@@ -7,15 +7,21 @@ package forum.test;
 
 import org.junit.Test;
 import static org.junit.Assert.*;
+import org.junit.runner.RunWith;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 /**
  *
  * @author ajc
  */
+
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration(locations = "file:/C:\\Users\\admin\\Desktop\\Projets\\Forum\\Forum\\application-context.xml")
 public class forumTest {
     
     @Test
-    public void test(){
-        System.out.println("");
+    public void ajouterMessage(){
+        
     }
 }

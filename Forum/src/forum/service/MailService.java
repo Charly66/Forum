@@ -5,11 +5,14 @@
  */
 package forum.service;
 
+import org.springframework.stereotype.Service;
+
 /**
  *
  * @author ajc
  */
-public class MailService {
+@Service
+public class MailService implements MailServiceInterface{
     
     private String emeteur = "Forum@forum.com";
     private String dest;
