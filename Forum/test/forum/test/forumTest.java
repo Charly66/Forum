@@ -5,7 +5,10 @@
  */
 package forum.test;
 
+import forum.entity.Forum;
 import forum.entity.Message;
+import forum.entity.Sujet;
+import forum.entity.Utilisateur;
 import forum.service.DataService;
 import forum.service.ForumServiceImpl;
 import forum.service.MessageServiceImpl;
@@ -25,8 +28,8 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
  */
 
 @RunWith(SpringJUnit4ClassRunner.class)
-//@ContextConfiguration(locations = "file:/C:\\Users\\admin\\Desktop\\Projets\\Forum\\Forum\\application-context.xml")
-@ContextConfiguration(locations = "file:/C:\\Users\\ajc\\Documents\\NetBeansProjects\\Forum\\Forum\\application-context.xml")
+@ContextConfiguration(locations = "file:/C:\\Users\\admin\\Desktop\\Projets\\Forum\\Forum\\application-context.xml")
+//@ContextConfiguration(locations = "file:/C:\\Users\\ajc\\Documents\\NetBeansProjects\\Forum\\Forum\\application-context.xml")
 
 
 public class forumTest {
@@ -48,4 +51,23 @@ public class forumTest {
         messageService.ajouter(new Message(1L, "titre", new Date(), "contenu"));
         System.out.println(messageService.rechercherTout());
     }
+    
+    @Test
+    public void ajouterSujet(){
+        sujetService.ajouter(new Sujet(1L, "titre", new Date()));
+        System.out.println(sujetService.rechercherTout());
+    }
+    
+    @Test
+    public void ajouterForum(){
+        forumService.ajouter(new Forum(1L, "titre", new Date()));
+        System.out.println(forumService.rechercherTout());
+    }
+    
+    @Test
+    public void ajouterUtilisateur(){
+        utilisateurService.ajouter(new Utilisateur(1L, "login1", "password1", "email1"));
+        System.out.println(utilisateurService.rechercherTout());
+    }
+    
 }
