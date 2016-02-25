@@ -13,7 +13,7 @@ public class DataService {
     
     public void deleteAll(){
        UtilisateurService utilisateur = new UtilisateurService();
-       ForumService forum = new ForumService();
+       ForumServiceImpl forum = new ForumServiceImpl();
        MessageService message = new MessageService();
        SujetService sujet = new SujetService();
        

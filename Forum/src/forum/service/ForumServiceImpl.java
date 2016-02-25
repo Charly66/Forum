@@ -5,17 +5,19 @@
  */
 package forum.service;
 
-import forum.dao.ForumDAOJpaImpl;
+import forum.dao.ForumDAOImpl;
 import forum.entity.Forum;
 import java.util.Collection;
+import org.springframework.beans.factory.annotation.Autowired;
 
 /**
  *
  * @author ajc
  */
-public class ForumService {
+public class ForumServiceImpl {
     
-    private ForumDAOJpaImpl dao = new ForumDAOJpaImpl();
+    @Autowired
+    private ForumDAOImpl dao;
     
     public void ajouter(Forum f){
         dao.ajouter(f);

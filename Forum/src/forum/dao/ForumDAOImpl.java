@@ -16,7 +16,7 @@ import javax.persistence.Persistence;
  * @author ajc
  */
 
-public class ForumDAOJpaImpl implements ForumDAO{
+public class ForumDAOImpl implements ForumDAO{
     
     private EntityManager em = Persistence.createEntityManagerFactory("ForumPU").createEntityManager();
     
