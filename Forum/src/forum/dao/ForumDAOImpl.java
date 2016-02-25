@@ -10,12 +10,13 @@ import java.util.Collection;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.Persistence;
+import org.springframework.stereotype.Repository;
 
 /**
  *
  * @author ajc
  */
-
+@Repository
 public class ForumDAOImpl implements ForumDAO{
     
     private EntityManager em = Persistence.createEntityManagerFactory("ForumPU").createEntityManager();

@@ -5,85 +5,26 @@
  */
 package forum.service;
 
-import forum.dao.UtilisateurDAO;
 import forum.entity.Utilisateur;
 import forum.exception.DejaInscritException;
 import forum.exception.LoginInconnuException;
 import forum.exception.PasswordException;
-import java.util.Collection;
 import java.util.List;
 
 /**
  *
  * @author ajc
  */
-public class UtilisateurService {
-
-    private UtilisateurDAO dao = new UtilisateurDAO();
-
-    public void inscription(Utilisateur u) throws DejaInscritException {
-        if (rechercherLogin(u.getLogin()) != null) {
-            throw new DejaInscritException();
-        }
-        if (rechercherMail(u.getEmail()) != null) {
-            throw new DejaInscritException();
-        }
-        ajouter(u);
-        new MailService().mail(u.getEmail(), "Inscription", "Bienvenue !!!");
-        validationInscription(u.getEmail());
-
-    }
-
-    public void validationInscription(String mail) {
-        Utilisateur u = rechercherMail(mail);
-        u.setValidation(true);
-        modifier(u);
-    }
-    
-    public void login(String login, String password) throws PasswordException, LoginInconnuException {
-        Utilisateur u = rechercherLogin(login);
-        if (u == null) {
-            throw new LoginInconnuException();
-        }
-        System.out.println(u.getPassword() +" "+password);
-        if (u.getPassword().equals(password)){
-            System.out.println("Connection Login effectuée");
-        }
-        else{
-            throw new PasswordException();
-        }
-    }
-
-    public void ajouter(Utilisateur u) {
-        dao.ajouter(u);
-    }
-
-    public void supprimer(Long id) {
-        dao.supprimer(id);
-    }
-    
-    public void supprimerTout() {
-        dao.supprimerTout();
-    }
-
-    public void modifier(Utilisateur u) {
-        dao.modifier(u);
-    }
-
-    public Utilisateur rechercherId(Long id) {
-        return dao.rechercherId(id);
-    }
-
-    public Collection<Utilisateur> rechercherTout() {
-        return dao.rechercherTout();
-    }
-
-    public Utilisateur rechercherMail(String mail) {
-        return dao.rechercherMail(mail);
-    }
-    
-    public Utilisateur rechercherLogin(String login) {
-        return dao.rechercherLogin(login);
-    }
-
+public interface UtilisateurService {
+    public void inscription(Utilisateur u) throws DejaInscritException;
+    public void validationInscription(String mail);
+    public void login(String login, String password) throws PasswordException, LoginInconnuException;
+    public void ajouter(Utilisateur u);
+    public void supprimer(Long id);
+    public void supprimerTout();
+    public void modifier(Utilisateur u);
+    public Utilisateur rechercherId(Long id);
+    public List<Utilisateur> rechercherTout();
+    public Utilisateur rechercherMail(String mail);
+    public Utilisateur rechercherLogin(String login);
 }

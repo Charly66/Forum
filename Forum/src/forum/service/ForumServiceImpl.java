@@ -7,14 +7,16 @@ package forum.service;
 
 import forum.dao.ForumDAOImpl;
 import forum.entity.Forum;
-import java.util.Collection;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 /**
  *
  * @author ajc
  */
-public class ForumServiceImpl {
+@Service
+public class ForumServiceImpl implements ForumService{
     
     @Autowired
     private ForumDAOImpl dao;
@@ -37,7 +39,7 @@ public class ForumServiceImpl {
     public Forum rechercherId(long id){
        return dao.rechercherId(id);
     }
-    public Collection<Forum> rechercherTout(){
+    public List<Forum> rechercherTout(){
         return dao.rechercherTout();
     }
 }
