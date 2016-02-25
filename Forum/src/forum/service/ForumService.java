@@ -5,7 +5,7 @@
  */
 package forum.service;
 
-import forum.dao.ForumDAO;
+import forum.dao.ForumDAOJpaImpl;
 import forum.entity.Forum;
 import java.util.Collection;
 
@@ -15,7 +15,7 @@ import java.util.Collection;
  */
 public class ForumService {
     
-    private ForumDAO dao = new ForumDAO();
+    private ForumDAOJpaImpl dao = new ForumDAOJpaImpl();
     
     public void ajouter(Forum f){
         dao.ajouter(f);
